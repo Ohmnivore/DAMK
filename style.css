@@ -1,0 +1,60 @@
+#icons {
+  margin-top: 112px;
+  font-size: 24px;
+}
+#icons .icon {
+  float: left;
+  padding: 6px;
+}
+
+@charset 'UTF-8';
+/* @FONT-FACE loads font into browser */
+@font-face {
+  font-family: 'typicons';
+  src: url('assets/typicons.eot');
+  src: url('assets/typicons.eot?#iefix') format('embedded-opentype'),
+       url('assets/typicons.woff') format('woff'),
+       url('assets/typicons.ttf') format('truetype'),
+       url('assets/typicons.svg#typicons') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+/* :before psuedo-selector inserts and styles icon */
+.typcn:before {
+  font-family: 'typicons';
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+  display: inline-block;
+  text-decoration: inherit;
+  width: 1em;
+  height: 1em;
+  font-size: 1.5em;
+  text-align: center;
+  -webkit-font-smoothing: antialiased;
+  font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Code for individual icons */
+.typcn-time:before { content: '\e120'; } /* '' */
+.typcn-times-outline:before { content: '\e121'; } /* '' */
+.typcn-times:before { content: '\e122'; } /* '' */
+.typcn-pin-outline:before { content: '\e0c8'; } /* '' */
+.typcn-pin:before { content: '\e0c9'; } /* '' */
+
+#firstRow {
+    min-width: 500px;
+}
+#newtext {
+}
+#submit {
+    float: right;
+}
+
+#table {
+    min-width: 500px;
+}
+.deletebutton {
+    float: right;
+}

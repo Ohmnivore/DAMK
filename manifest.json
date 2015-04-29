@@ -1,0 +1,22 @@
+{
+    "name": "Dank ASCII Meme Klipboard (DAMK)",
+    "description": "Allows you to save your dank ASCII memes for instant pasting. What a time to be alive!",
+    "version": "0.2",
+    "permissions": [
+        "contextMenus",
+        "clipboardWrite",
+        "storage",
+        "activeTab",
+        "<all_urls>"],
+    "background": {
+        "scripts": ["context.js"]
+    },
+    "browser_action": {
+        "default_title": "DAMK",
+        "default_popup": "popup.html"
+    },
+    "web_accessible_resources": [
+        "assets/*"
+    ],
+    "manifest_version": 2
+}
