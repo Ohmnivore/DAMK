@@ -43,18 +43,53 @@
 .typcn-pin-outline:before { content: '\e0c8'; } /* '' */
 .typcn-pin:before { content: '\e0c9'; } /* '' */
 
-#firstRow {
-    min-width: 500px;
+/* My code */
+*:focus {
+    outline: none;
 }
+
+body {
+    background: #001118;
+    color: #FFF;
+}
+
 #newtext {
+    float: left;
+    background: #F86300;
+    color: #FFF;
+    font-size: 1.5em;
 }
 #submit {
     float: right;
 }
 
-#table {
+#table, #firstRow {
     min-width: 500px;
 }
 .deletebutton {
     float: right;
+}
+.copybutton {
+    float: left;
+    font-size: 1.5em;
+}
+
+button {
+    color: #FFF;
+    background-color: #29A9DF;
+    border-color: #29A9DF;
+    font-size: 1.5em;
+}
+button:active, button:hover, button:focus {
+    background-color: #F86300;
+    border-color: #F86300;
+}
+button, #newtext {
+    border: 4px solid transparent;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border-radius(0) !important;
+    border-radius: 0px;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
 }

@@ -17,7 +17,14 @@ function patchAddForm()
     var submitBtn = document.getElementById("submit");
     submitBtn.onclick = function () {
         addFace(inpText.value);
+        inpText.value = "";
     };
+    inpText.addEventListener("keydown", function(e) {
+        if (!e) { var e = window.event; }
+
+        // Enter is pressed
+        if (e.keyCode == 13) { addFace(inpText.value); inpText.value = ""; }
+    }, false);
 }
 
 function copyToClip(Content)
@@ -37,9 +44,12 @@ function copyToClip(Content)
 
 function addFace(face)
 {
-    faces.push(face);
-    displayFaces();
-    saveFaces();
+    if (face.length > 0)
+    {
+        faces.unshift(face);
+        displayFaces();
+        saveFaces();
+    }
 }
 function removeFace(index)
 {
