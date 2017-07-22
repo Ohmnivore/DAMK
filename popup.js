@@ -27,17 +27,16 @@ function patchAddForm()
     }, false);
 }
 
-function copyToClip(Content)
+function copyToClip(content, btn)
 {
-    var input = document.createElement('textarea');
-    document.body.appendChild(input);
-    input.style.display = "none";
-    input.value = Content;
+    var input = document.createElement("textarea");
+    btn.appendChild(input);
+    input.value = content;
     input.focus();
     input.select();
-    document.execCommand('Copy');
+    document.execCommand("copy");
     input.remove();
-    chrome.tabs.executeScript(null, {code: "var toPaste = '" + Content + "';"}, function(){
+    chrome.tabs.executeScript(null, {code: "var toPaste = '" + content + "';"}, function(){
         chrome.tabs.executeScript(null, {file: "paste.js"}
     )});
 }
@@ -77,7 +76,7 @@ function displayFaces()
         tr.appendChild(td1);
         var btn = (function wrap (i) {return createButton("copybutton", td1, faces[i], function ()
             {
-                copyToClip(faces[i]);
+                copyToClip(faces[i], this);
             });})(i);
         btn.appendChild(document.createTextNode(faces[i]));
 

@@ -28,12 +28,12 @@ function getFaces(callback)
 
 function copyToClip(Content)
 {
-    var input = document.createElement('textarea');
+    var input = document.createElement("textarea");
     document.body.appendChild(input);
     input.value = Content;
     input.focus();
     input.select();
-    document.execCommand('Copy');
+    document.execCommand("copy");
     input.remove();
     chrome.tabs.executeScript(null, {code: "var toPaste = '" + Content + "';"}, function(){
         chrome.tabs.executeScript(null, {file: "paste.js"}
